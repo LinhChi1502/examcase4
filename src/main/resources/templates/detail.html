@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="'Thanh pho ' +  ${city.name}"></h1>
+<a th:href="@{/}"><p>Xem danh sach san pham</p></a>
+<p th:text="'Ten: ' + ${city.name}"></p>
+<p th:text="'Quoc gia: ' + ${city.country.countryName}"></p>
+<p th:text="'Dien tich: ' + ${city.area}"></p>
+<p th:text="'Dan so: ' + ${city.population}"></p>
+<p th:text="'GDP: ' + ${city.gdp}"></p>
+<p>Gioi thieu:</p>
+<p th:text="${city.about}"></p>
+
+<a th:href="@{/edit/__${city.cityID}__}">Chinh sua</a>
+<a th:href="@{/delete}">Xoa</a>
+</body>
+</html>

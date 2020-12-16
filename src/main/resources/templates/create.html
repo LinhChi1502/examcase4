@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>them moi</h1>
+<form action="" th:object="${city}">
+<p>Ten:
+    <input type="text" th:field="*{name}">
+</p>
+    <p>
+        <select th:field="*{country}">
+            <option th:each="country: ${countries}" th:value="${country.countryID}"
+                    th:text="${country.countryName}"></option>
+        </select>
+    </p>
+</form>
+</body>
+</html>

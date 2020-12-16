@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sach thanh pho</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Danh sach thanh pho</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Thanh pho</th>
+            <th>Quoc gia</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="city: ${cities}">
+            <tr>
+                <td th:text="${city.cityID}"></td>
+                <td ><a th:href="@{/detail/__${city.cityID}__}"><span th:text="${city.name}"></span></a></td>
+                <td th:text="${city.country.countryName}"></td>
+                <td><a th:href="@{/edit/__${city.cityID}__}">chinh sua</a>|<a href="">xoa</a></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
