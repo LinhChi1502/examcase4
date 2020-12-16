@@ -6,15 +6,31 @@
 </head>
 <body>
 <h1>them moi</h1>
-<form action="" th:object="${city}">
-<p>Ten:
-    <input type="text" th:field="*{name}">
-</p>
-    <p>
+<form th:object="${city}" method="post">
+    <p>Ten:
+        <input type="text" th:field="*{name}">
+    </p>
+    <p>Quoc gia:
         <select th:field="*{country}">
             <option th:each="country: ${countries}" th:value="${country.countryID}"
                     th:text="${country.countryName}"></option>
         </select>
+    </p>
+    <p>Dien tich:
+        <input type="text" th:field="*{area}">
+    </p>
+    <p>
+        Dan so:
+        <input type="text" th:field="*{population}">
+    </p>
+    <p>GDP:
+        <input type="text" th:field="*{gdp}">
+    </p>
+    <p>Gioi thieu:
+        <input type="text" th:field="*{about}">
+    </p>
+    <p>
+        <input type="submit" th:value="Create">
     </p>
 </form>
 </body>

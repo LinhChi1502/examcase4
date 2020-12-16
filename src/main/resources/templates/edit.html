@@ -6,24 +6,33 @@
 </head>
 <body>
 <h1 th:type="'Chinh sua thanh pho' + ${city.name}"></h1>
-<form th:object="${city}" method="post">
-    <table>
-        <tr>
-            <td>Ten: <input type="text" th:field="*{name}"></td>
-        </tr>
-        <tr>
-            <td>Quoc gia:
-                <select th:field="*{country}">
-                    <option th:each="country: ${countries}" th:value="${country.countryID}"
-                            th:text="${country.countryName}"></option>
-
-                </select>
-            </td>
-        </tr>
-<tr>
-    <td><input type="submit" value="Edit"></td>
-</tr>
-    </table>
+<form th:object="${city}" method="post" th:action="@{/edit}">
+    <input type="text" th:field="*{cityID}" hidden>
+    <p>Ten:
+        <input type="text" th:field="*{name}">
+    </p>
+    <p>Quoc gia:
+        <select th:field="*{country}">
+            <option th:each="country: ${countries}" th:value="${country.countryID}"
+                    th:text="${country.countryName}"></option>
+        </select>
+    </p>
+    <p>Dien tich:
+        <input type="text" th:field="*{area}">
+    </p>
+    <p>
+        Dan so:
+        <input type="text" th:field="*{population}">
+    </p>
+    <p>GDP:
+        <input type="text" th:field="*{gdp}">
+    </p>
+    <p>Gioi thieu:
+        <input type="text" th:field="*{about}">
+    </p>
+    <p>
+        <input type="submit" th:value="Create">
+    </p>
 </form>
 </body>
 </html>

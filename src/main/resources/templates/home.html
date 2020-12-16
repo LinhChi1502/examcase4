@@ -12,7 +12,7 @@
 
 <div class="container">
     <h2>Danh sach thanh pho</h2>
-
+    <a th:href="@{/create}"><p>Them moi</p></a>
     <table class="table">
         <thead>
         <tr>
@@ -28,7 +28,7 @@
                 <td th:text="${city.cityID}"></td>
                 <td ><a th:href="@{/detail/__${city.cityID}__}"><span th:text="${city.name}"></span></a></td>
                 <td th:text="${city.country.countryName}"></td>
-                <td><a th:href="@{/edit/__${city.cityID}__}">chinh sua</a>|<a href="">xoa</a></td>
+                <td><a th:href="@{/edit/__${city.cityID}__}">chinh sua</a>|<a th:href="@{/delete/__${city.cityID}__}" onclick="return confirm('Are you sure?')">xoa</a></td>
             </tr>
         </th:block>
         </tbody>

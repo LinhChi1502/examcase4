@@ -16,6 +16,6 @@
 <p th:text="${city.about}"></p>
 
 <a th:href="@{/edit/__${city.cityID}__}">Chinh sua</a>
-<a th:href="@{/delete}">Xoa</a>
+<a th:href="@{/delete/__${city.cityID}__}">Xoa</a>
 </body>
 </html>
